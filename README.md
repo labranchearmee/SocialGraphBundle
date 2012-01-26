@@ -1,6 +1,9 @@
 manage facebook / twitter interaction
 
+<h1>Facebook</h1>
 <h2>Mise à jour de FOSUser avec les données de FOSFacebook</h2>
+It's a pity but it took me quite a while to understand how simple it was... Part of the reason was that there was no tutorial.
+
 
 <pre>
       if ($this->get('fos_facebook.api')->getUser() && !$u->getFacebookID()) {
