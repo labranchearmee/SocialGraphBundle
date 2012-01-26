@@ -19,3 +19,17 @@ It's a pity but it took me quite a while to understand how simple it was... Part
 <pre>
       ...
 </pre>
+
+
+<h2>Post a stream</h2>
+<pre>
+      ...
+</pre>
+
+
+<h1>Twitter</h1>
+
+<h2>Post a tweet</h2>
+<pre>
+      ...
+</pre>
