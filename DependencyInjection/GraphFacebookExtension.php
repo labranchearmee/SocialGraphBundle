@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\FOS\FacebookBundle\DependencyInjection;
+namespace Brickstorm\SocialGraphBundle\DependencyInjection;
 
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
