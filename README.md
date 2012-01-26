@@ -17,13 +17,15 @@ It's a pity but it took me quite a while to understand how simple it was... Part
 <h2>Récupération des amis</h2>
 
 <pre>
-      ...
+      $fbManager = new FacebookManager($this->get('fos_facebook.api'));
+      $fbManager->getFriends()
 </pre>
 
 
 <h2>Post a stream</h2>
 <pre>
-      ...
+      $fbManager = new FacebookManager($this->get('fos_facebook.api'));
+      $fbManager->executeUpdateStatus($link, $message);
 </pre>
 
 
