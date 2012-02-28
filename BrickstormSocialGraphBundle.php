@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Brickstorm\FacebookGraphBundle;
+namespace Brickstorm\SocialGraphBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -21,13 +21,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  *
  * @author <yourname> <youremail>
  */
-class BrickstormFacebookGraphBundle extends Bundle
+class BrickstormSocialGraphBundle extends Bundle
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function getParent()
-    {
-        return 'FOSFacebookBundle';
-    }
+
 }

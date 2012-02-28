@@ -1,0 +1,9 @@
+parameters:
+    facebook.graph.class:  Brickstorm\SocialGraphBundle\DependencyInjection\GraphFacebook
+    facebook.graph.popin_width: 600
+    facebook.graph.popin_height: 650
+
+services:
+    facebook.graph:
+        class:        %facebook.graph.class%
+        #arguments:    [me]
