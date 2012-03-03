@@ -1,9 +1,25 @@
-parameters:
-    facebook.graph.class:  Brickstorm\SocialGraphBundle\DependencyInjection\GraphFacebook
-    facebook.graph.popin_width: 600
-    facebook.graph.popin_height: 650
+#parameters:
+#    facebook.graph.class:  Brickstorm\SocialGraphBundle\DependencyInjection\GraphFacebook
+#    facebook.graph.popin_width: 600
+#    facebook.graph.popin_height: 650
 
 services:
-    facebook.graph:
-        class:        %facebook.graph.class%
-        #arguments:    [me]
+    brickstorm.facebook.user:
+        class: Brickstorm\SocialGraphBundle\Security\User\Provider\FacebookProvider
+        arguments:
+            facebook: "@fos_facebook.api"
+            userManager: "@fos_user.user_manager"
+            validator: "@validator"
+            container: "@service_container"
+
+    brickstorm.twitter.user:
+        class: Brickstorm\SocialGraphBundle\Security\User\Provider\TwitterProvider
+        arguments:
+            twitter_oauth: "@fos_twitter.api"
+            userManager: "@fos_user.user_manager"
+            validator: "@validator"
+            session: "@session" 
+
+#    facebook.graph:
+#        class:        %facebook.graph.class%
+#        #arguments:    [me]
