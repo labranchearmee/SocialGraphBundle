@@ -20,9 +20,9 @@ class FacebookProvider implements UserProviderInterface
 
     public function __construct(BaseFacebook $facebook, $userManager, $validator)
     {
-        $this->facebook = $facebook;
+        $this->facebook    = $facebook;
         $this->userManager = $userManager;
-        $this->validator = $validator;
+        $this->validator   = $validator;
     }
 
     public function supportsClass($class)
@@ -46,14 +46,21 @@ class FacebookProvider implements UserProviderInterface
         }
 
         if (!empty($fbdata)) {
+
+            //already member ?
+            if (empty($user)) {
+              $user = $this->userManager->findUserBy(array('email' => $fbdata['email']));
+            }
+
             if (empty($user)) {
                 $user = $this->userManager->createUser();
                 $user->setEnabled(true);
                 $user->setPassword('');
+
+                // TODO use http://developers.facebook.com/docs/api/realtime
+                $user->setFBData($fbdata);
             }
 
-            // TODO use http://developers.facebook.com/docs/api/realtime
-            $user->setFBData($fbdata);
 
             if (count($this->validator->validate($user, 'Facebook'))) {
                 // TODO: the user was found obviously, but doesnt match our expectations, do something smart
